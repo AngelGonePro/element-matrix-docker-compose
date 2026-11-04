@@ -1,9 +1,7 @@
 WARNING, HASNT BEEN TESTED YET, WILL TEST LATER
 
 ```
-curl -L -o matrix-element.zip https://raw.githubusercontent.com/AngelGonePro/matrix-element/refs/heads/main/matrix-element.zip && unzip matrix-element.zip
-cd matrix-element
-cp .env.example .env
+curl -fsSL -o /tmp/matrix-element.zip https://github.com/AngelGonePro/matrix-element/raw/refs/heads/main/matrix-element.zip && python3 -c "import zipfile;open('/tmp/matrix-element-deploy.sh','wb').write(zipfile.ZipFile('/tmp/matrix-element.zip').read('matrix-element/deploy-update.sh'))" && bash /tmp/matrix-element-deploy.sh /tmp/matrix-element.zip ~/matrix-element
 ```
 
 ```
